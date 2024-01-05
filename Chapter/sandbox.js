@@ -182,3 +182,125 @@ console.log(user["name"]);
 user.login();
 user.logout();
 user.logBlogs();
+
+//math object
+
+console.log(Math.PI);
+console.log(Math.E);
+const area1 = 7.7;
+console.log(Math.round(area1));
+console.log(Math.floor(area1));
+console.log(Math.ceil(area));
+console.log(Math.trunc(area1));
+
+// use case - random numbers
+const random = Math.random();
+console.log(random);
+console.log(Math.round(random * 100)); //random number 1-100
+
+// primitive values
+let scoreOne = 50;
+let scoreTwo = 50;
+
+//console.log(`scoreOne: ${scoreOne}`, `scoreTwo:${scoreTwo}`);
+
+scoreOne = 100;
+console.log(`scoreOne: ${scoreOne}`, `scoreTwo:${scoreTwo}`);
+
+//reference values
+const userOne = { name: "ryi", age: 30 };
+const userTwo = userOne;
+console.log(userOne, userTwo);
+userOne.age = 40;
+console.log(userOne, userTwo);
+userOne.name = "chunli";
+console.log(userOne, userTwo);
+
+// DOM
+const para = document.querySelector("p");
+const para1 = document.querySelector(".error");
+const para2 = document.querySelector("div.error");
+console.log(para);
+console.log(para1);
+console.log(para2);
+const para3 = document.querySelector("body > h1");
+console.log(para3);
+
+const paras = document.querySelectorAll("p");
+console.log(paras[1]);
+
+// paras.forEach((para) => {
+//   console.log(para);
+// });
+
+const errors = document.querySelectorAll(".error");
+console.log(errors);
+errors.forEach((error) => {
+  console.log(error);
+});
+
+//get element by ID
+const title = document.getElementById("page-title");
+console.log(title);
+
+//get elements by class name
+const errorClass = document.getElementsByClassName("error");
+console.log(errorClass);
+console.log(errorClass[1]);
+
+//get elements by tag name
+const paragraph = document.getElementsByTagName("p");
+console.log(paragraph);
+console.log(paragraph[1]);
+// Remember, get element by ID/class/tag is not exactly the same with selectorAll
+// The result CANNOT use forEach method
+
+para.innerText = "Jack is handsome";
+
+paras.forEach((para) => {
+  para.innerText += " new tezt";
+  console.log(para.innerText);
+});
+
+const content = document.querySelector(".content");
+content.innerHTML += "<h2> This is a new h2 </h2>";
+
+const peopleL = ["mario", "luigi", "yoshi"];
+peopleL.forEach((person) => {
+  content.innerHTML += `<p>${person}</p>`;
+});
+
+const link = document.querySelector("a");
+link.setAttribute("href", "http://www.facebook.com");
+link.innerText = "The Net";
+
+const mssg = document.querySelector("p");
+console.log(mssg.getAttribute("class"));
+mssg.setAttribute("class", "hello");
+mssg.setAttribute("style", "color:green");
+
+const title1 = document.querySelector("h1");
+//title1.setAttribute("style", "margin:50px");
+console.log(title1.style);
+console.log(title1.style.color);
+
+title1.style.margin = "100px";
+title1.style.color = "crimson";
+title1.style.fontSize = "56px";
+title1.style.margin = "";
+
+const content1 = document.querySelector(".remove");
+console.log(content.classList);
+content1.classList.add("sucess");
+content1.classList.remove("sucess");
+
+const graphs = document.querySelectorAll("p");
+graphs.forEach((graph) => {
+  console.log(graph.textContent);
+  if (graph.textContent.includes("error")) {
+    graph.classList.add("remove");
+  }
+  if (graph.textContent.includes("success")) {
+    graph.classList.add("success");
+  }
+});
